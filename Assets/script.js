@@ -7,8 +7,8 @@ const employeesArray = {};
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   // user input will be first name (string), last name (string), and salary (number)
-  let Employee = {
-  }
+  let Employee = {}
+  let cancel = "User cancelled prompt"
   // prompt creates input window for each category
   let fName = prompt("Employee First Name:", "First Name");
   Employee.firstName = fName;
@@ -21,9 +21,13 @@ const collectEmployees = function() {
       let sal = prompt("Employee Salary:", "0");
       Employee.salary = sal
       console.log(Employee)
-    }
+      if (sal != null) {
+        let last = confirm("Do you wish to add another employee?")
+      } else {console.log(cancel);}
+    } else {console.log(cancel);}
+  } else {
+    console.log(cancel);
   }
-  
 }
 
 // Display the average salary
