@@ -1,50 +1,32 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-const employeesArray = {};
+const employeesArray = [];
 
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   // user input will be first name (string), last name (string), and salary (number)
-  let Employee = {}
-  let cancel = "User cancelled prompt";
-  // prompt creates input window for each category
-  let promp1 = function() {
-    let fName = prompt("Employee First Name:", "First Name");
-    Employee.firstName = fName;
-    console.log(Employee);
-    if (fName != null) {
-      promp2()
-    } else {console.log(cancel);}
+let decision = true;
+while (decision) {
+  const firstName = prompt("Employee First Name:", "First Name");
+  const lastName = prompt("Employee Last Name:", "Last Name");
+  let salary = prompt("Employee Salary:", "0");
+  if (isNaN(salary)  || salary === null) {
+    salary = 0;
+  }
+  let employee = {
+    firstName: firstName,
+    lastName: lastName,
+    salary: salary
   }
 
-  let promp2 = function() {
-    let lName = prompt("Employee Last Name:", "Last Name");
-    Employee.lastName = lName;
-    console.log(Employee);
-    if (lName != null) {
-      promp3()
-    } else {console.log(cancel);}
-  }
+  decision = confirm("Add another employee?");
 
-  let promp3 = function() {
-    let sal = prompt("Employee Salary:", "0");
-    Employee.salary = sal;
-    console.log(Employee);
-    if (sal != null) {
-      conf()
-    } else {console.log(cancel);}
-  }
+  employeesArray.push(employee);
+}  
 
-  let conf = function() {
-    let last = confirm("Do you wish to add another employee?"); 
-    if (last) {
-    promp1()
-    } else {console.log(cancel);}   
-  }
-
-  promp1()
+return employeesArray;  
 }
 
 // Display the average salary
