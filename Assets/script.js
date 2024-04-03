@@ -8,26 +8,43 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   // user input will be first name (string), last name (string), and salary (number)
   let Employee = {}
-  let cancel = "User cancelled prompt"
+  let cancel = "User cancelled prompt";
   // prompt creates input window for each category
-  let fName = prompt("Employee First Name:", "First Name");
-  Employee.firstName = fName;
-  console.log(Employee);
-  if (fName != null) {
+  let promp1 = function() {
+    let fName = prompt("Employee First Name:", "First Name");
+    Employee.firstName = fName;
+    console.log(Employee);
+    if (fName != null) {
+      promp2()
+    } else {console.log(cancel);}
+  }
+
+  let promp2 = function() {
     let lName = prompt("Employee Last Name:", "Last Name");
     Employee.lastName = lName;
     console.log(Employee);
     if (lName != null) {
-      let sal = prompt("Employee Salary:", "0");
-      Employee.salary = sal
-      console.log(Employee)
-      if (sal != null) {
-        let last = confirm("Do you wish to add another employee?")
-      } else {console.log(cancel);}
+      promp3()
     } else {console.log(cancel);}
-  } else {
-    console.log(cancel);
   }
+
+  let promp3 = function() {
+    let sal = prompt("Employee Salary:", "0");
+    Employee.salary = sal;
+    console.log(Employee);
+    if (sal != null) {
+      conf()
+    } else {console.log(cancel);}
+  }
+
+  let conf = function() {
+    let last = confirm("Do you wish to add another employee?"); 
+    if (last) {
+    promp1()
+    } else {console.log(cancel);}   
+  }
+
+  promp1()
 }
 
 // Display the average salary
