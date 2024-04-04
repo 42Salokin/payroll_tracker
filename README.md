@@ -14,7 +14,7 @@ N/A
 
 Access updated website online at:
 
-https://42salokin.github.io/portfolio/
+https://42salokin.github.io/payroll_tracker/
 
 ![Alt text](./Assets/Screenshot%20.jpg)
 
