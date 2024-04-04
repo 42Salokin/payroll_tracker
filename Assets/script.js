@@ -10,7 +10,7 @@ const collectEmployees = function() {
 let option = true;
 while (option) {
   // while option remains true, window will show three prompts, with first string labelling the input box above, second string as default text inside input
-  const firstName = prompt("Employee First Name:", "First Name");
+  let firstName = prompt("Employee First Name:", "First Name");
   const lastName = prompt("Employee Last Name:", "Last Name");
   let salary = prompt("Employee Salary:", "0");
   // if salary input is Not-a-Number, or salary exactly equals nothing, then salary value becomes 0
