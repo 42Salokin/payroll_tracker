@@ -18,7 +18,7 @@ while (decision) {
   let employee = {
     firstName: firstName,
     lastName: lastName,
-    salary: salary
+    salary: parseInt(salary)
   }
 
   decision = confirm("Add another employee?");
@@ -45,7 +45,8 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-
+  let randomEmployee = Math.floor(Math.random() * employeesArray.length);
+  console.log(`Congrats to ${employeesArray[randomEmployee].firstName} ${employeesArray[randomEmployee].lastName}, our random drawing winner!`);
 }
 
 /*
